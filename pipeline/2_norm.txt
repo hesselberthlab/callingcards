@@ -1,0 +1,12 @@
+NORMALIZATION BY NUMBER OF READS ALIGNED IN THE LIBRARY (RPM)
+
+ (Gal4) = 1:
+awk 'BEGIN{FS="\t"; OFS="\t"} norm = ($4 / 162566) * 1000000 {print $1,$2,$3,norm}' ../gal4/1_CGATGT.bg > gal4_RPM.bg
+
+ (Cdc7kd) = 2:
+awk 'BEGIN{FS="\t"; OFS="\t"} norm = ($4 / 77258) * 1000000  {print $1,$2,$3,norm}' ../cdc7kd/2_TTAGGC.bg > cdc7kd_RPM.bg
+
+ (Cdc7kd_Cterm) = 3:
+awk 'BEGIN{FS="\t"; OFS="\t"} norm = ($4 / 344720) * 1000000 {print $1,$2,$3,norm}' ../cdc7kd_cterm/3_TGACCA.bg > cdc7kd_cterm_RPM.bg
+
+

@@ -1,0 +1,64 @@
+Pipeline for generating alignment data and figures
+
+1_run.sh
+	Input: *.fastq.gz
+	Output: *.bg
+
+2_norm.txt
+	Input: *.bg
+	Output: *_RPM.bg
+
+
+Figure 3A
+
+3_pipeline.sh
+	Input: *_RPM.bg
+	Output: grouped_*.bed 
+
+4_combine.sh
+	Input: grouped_*.bed
+	Output: grouped_combined.bed
+
+5_plot.R
+	Input: grouped_combined.bed
+	Output: Combined_boxplot_color_outliersNA.pdf
+
+
+Figure 3B
+
+3_bedtools.sh
+	Input: *_RPM.bg
+	Output: *_maptiming.bg
+
+4_early.txt
+	Input: *_maptiming.bg 
+	Output: early_*_maptiming.bg
+
+5_ORC1_step1.sh
+	Input: early_*_maptiming.bg
+	Output: grouped_*_ORC1.bed 
+
+6_ORC1_step2.sh
+	Input: grouped_*_ORC1.bed
+	Output: grouped_ORC1.bed
+
+7_plots_ORC1.R
+	Input: grouped_ORC1.bed
+	Output: CC_vs_ORC1_5kbcentered_EARLY.pdf
+
+
+Supp Figure 3
+
+3_TSS_step1.sh
+	Input: *_RPM.bg
+	Output: grouped_*_TSS.bed
+
+4_TSS_step2.sh
+	Input: grouped_*_TSS.bed
+	Output: grouped_TSS.bed
+
+5_plots_TSS.R
+	Input: grouped_TSS.bed
+	Output: CC_vs_TSS_1kbcentered.pdf
+ 
+

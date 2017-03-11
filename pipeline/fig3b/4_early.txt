@@ -1,0 +1,13 @@
+# First run bedtools.sh
+
+# After map timing to CC, keep only early rep data
+
+awk 'BEGIN{FS="\t"; OFS="\t"} $4 < 25 && $5 != "NA" {print $1,$2,$3,$5}' cdc7kd_maptiming.bg > early_cdc7kd_maptiming.bg
+
+awk 'BEGIN{FS="\t"; OFS="\t"} $4 < 25  && $5 != "NA" {print $1,$2,$3,$5}' cdc7kd_cterm_maptiming.bg > early_cdc7kd_cterm_maptiming.bg
+
+awk 'BEGIN{FS="\t"; OFS="\t"} $4 < 25 && $5 != "NA" {print $1,$2,$3,$5}' gal4_maptiming.bg > early_gal4_maptiming.bg
+
+# Get Trep < 25min data only
+
+#awk 'BEGIN{FS="\t"; OFS="\t"} $4 < 25 {print $1,$2,$3,$4}' raghu.timing.bedgraph > early.raghu.timing.bedgraph

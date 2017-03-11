@@ -1,0 +1,4 @@
+CGATGT (ACATCG) - Gal4
+TTAGGC (GCCTAA) - Cdc7kd
+TGACCA (TGGTCA) - Cdc7kd CtermDel
+
